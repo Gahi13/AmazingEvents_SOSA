@@ -23,7 +23,7 @@ for (let eventos of fechas_pasadas(data)) {
     card.innerHTML = ` 
     <div class="card zoom bg-warning-subtle">
     <img src="${eventos.image}" class="card-img-top" >
-    <div class="card-body">
+    <div class="card-body body">
       <h5 class="card-title">${eventos.name}</h5>
       <p class="card-text bg-info-subtle">${eventos.description}</p>
       <div class=" d-grid gap-2">

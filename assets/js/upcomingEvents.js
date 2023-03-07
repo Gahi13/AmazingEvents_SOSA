@@ -23,7 +23,7 @@ for (let events of comparar_fechas(data)) {
     card.innerHTML = ` 
     <div class="card zoom bg-info-subtle">
     <img src="${events.image}" class="card-img-top" >
-    <div class="card-body">
+    <div class="card-body body">
       <h5 class="card-title">${events.name}</h5>
       <p class="card-text bg-danger-subtle">${events.description}</p>
       <div class=" d-grid gap-2 d-md-flex justify-content-md-center">

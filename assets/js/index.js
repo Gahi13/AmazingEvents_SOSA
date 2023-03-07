@@ -8,7 +8,7 @@ for (let evento of data.events) {
     card.innerHTML = ` 
     <div class="card zoom bg-danger-subtle">
     <img src="${evento.image}" class="card-img-top " >
-    <div class="card-body">
+    <div class="card-body body">
       <h5 class="card-title">${evento.name}</h5>
       <p class="card-text bg-warning">${evento.description}</p>
       <div class=" d-grid gap-2 d-md-flex justify-content-md-end">

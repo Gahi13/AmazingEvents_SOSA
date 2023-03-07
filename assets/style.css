@@ -23,7 +23,7 @@ header {
     border-style:solid;
     background-image: url(./images/cards.jpg);
 }
-.card-body{
+.body{
     height: 15rem ;
     display: flex;
     flex-direction: column;
