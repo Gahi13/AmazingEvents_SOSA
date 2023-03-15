@@ -63,39 +63,12 @@
 <main>
   <h2 class="principal text-center text-bg-light" >HOME</h2>
     <!-- forms -->
-  <div class="form d-md-flex justify-content-md-between">
-    <div class="d-md-flex gap-lg-3 h3">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">Category</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="ko" checked>
-          <label class="form-check-label" for="ko">Category</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="ke" checked>
-          <label class="form-check-label" for="ke">Category</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="si" checked>
-          <label class="form-check-label" for="si">
-            Category
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="no" checked>
-          <label class="form-check-label" for="no">
-            Category
-          </label>
-        </div>
-      </div>
-      <div>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success bg-black" type="submit">Search</button>
-        </form>
-      </div>
+  <div class="form d-md-flex justify-content-md-between" id="checks"></div>
+    <div id="buscador">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="search by event name" aria-label="Search">
+        <button class="btn btn-outline-success bg-black" type="submit">Search</button>
+      </form>
     </div>
         <!-- cards -->
       <div class="cards" id="cards"></div>
