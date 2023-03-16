@@ -1,31 +1,23 @@
 import data from "./amazing.js";
-import { cardIndex, cardPast, comparar_fechas, cardUpcoming, categorias, checks, filtrarCat, filtrar } from "./funciones.js";
+import { cardIndex, pintarCards,fechas_pasadas, comparar_fechas, cardUpcoming, crearChecks, filtrarCat, filtrarPorTexto } from "./funciones.js";
+let contenedor = document.getElementById('cards')
+let check= document.getElementById('checks')
+let input= document.getElementById('buscador')
 
-const divElementos= document.getElementById('cards')
-cardPast(data,divElementos)
+//captura cuando se realiza la accion
+input.addEventListener('input', megaFiltro)
+check.addEventListener('change', megaFiltro)
 
-
-let categories= categorias(data.events)
-console.log(categories)
-let lugar_checks = document.getElementById('checks')
-
-
-let mostrar_checks = checks(categories, lugar_checks)
-
-
-lugar_checks.addEventListener('change', () => {
-    let arrayFil =filtrarCat(data.events)
-    cardPast(arrayFil, divElementos )
-    
-})
-
-
-//buscador
-let buscador= document.getElementById('buscador').addEventListener('keyup', (e) => {
-   
-    cardIndex(filtrar(filtrarCat(data.events), e.target.value), divElementos )
-})
-
+function megaFiltro(){
+    let filtroUno=  filtrarPorTexto(fecha, input.value)
+    let filtroDos= filtrarCat(filtroUno)
+    pintarCards(filtroDos,contenedor)
+}
+console.log(fechas_pasadas(data))
+let fecha=fechas_pasadas(data)
+ 
+pintarCards(fecha,contenedor)
+console.log(crearChecks(fecha, check))
 
 
 
