@@ -1,5 +1,15 @@
-import data from "./amazing.js";
+
 import { cardIndex, pintarCards,fechas_pasadas, comparar_fechas, cardUpcoming, crearChecks, filtrarCat, filtrarPorTexto } from "./funciones.js";
+async function getEventos() {
+    let data = await fetch("amazing.json").then((response) => response.json()).then((data) => {
+        return data;
+    }).catch(err => console.log(err));
+    return data;
+}
+let data= await getEventos()
+let events = data.events
+
+let currentDate = data.currentDate
 
 let contenedor = document.getElementById('cards')
 let check= document.getElementById('checks')
@@ -10,13 +20,13 @@ input.addEventListener('input', megaFiltro)
 check.addEventListener('change', megaFiltro)
 
 function megaFiltro(){
-    let filtroUno=  filtrarPorTexto(data.events, input.value)
+    let filtroUno=  filtrarPorTexto(events, input.value)
     let filtroDos= filtrarCat(filtroUno)
     cardIndex(filtroDos,contenedor)
 }
  
-cardIndex(data.events,contenedor)
-console.log(crearChecks(data.events, check))
+cardIndex(events,contenedor)
+console.log(crearChecks(events, check))
 
 
 

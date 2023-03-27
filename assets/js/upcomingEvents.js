@@ -1,5 +1,15 @@
-import data from "./amazing.js";
+//import data from "./amazing.js";
 import { cardIndex, pintarCards,fechas_pasadas, comparar_fechas, cardUpcoming, crearChecks, filtrarCat, filtrarPorTexto } from "./funciones.js";
+async function getEventos() {
+    let data = await fetch("amazing.json").then((response) => response.json()).then((data) => {
+        return data;
+    }).catch(err => console.log(err));
+    return data;
+}
+let data= await getEventos()
+let events = data.events
+
+let currentDate = data.currentDate
 let contenedor = document.getElementById('cards')
 let check= document.getElementById('checks')
 let input= document.getElementById('buscador')

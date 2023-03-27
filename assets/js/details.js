@@ -1,10 +1,20 @@
-import data from "./amazing.js";
-//
+//import data from "./amazing.js";
+async function getEventos() {
+  let data = await fetch("amazing.json").then((response) => response.json()).then((data) => {
+      return data;
+  }).catch(err => console.log(err));
+  return data;
+}
+let data= await getEventos()
+let events = data.events
+
+let currentDate = data.currentDate
+
 const queryString = location.search
 const params = new URLSearchParams(queryString)
 const dataId = params.get('id')
 
-const evento = data.events.find (evento => evento._id == dataId)
+const evento = events.find (evento => evento._id == dataId)
 
 let detalles= document.getElementById('detalles')
 function cardDetails(evento, ubicacion){

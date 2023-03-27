@@ -12,10 +12,12 @@ function cardIndex(eventos, lugarCard){
             card.style.width = '18rem'
             card.innerHTML = ` 
             <div class="card zoom bg-danger-subtle">
-            <img src="${evento.image}" class="card-img-top " >
+            <img src="${evento.image}" class="card-img-top object-fit-cover" >
             <div class="card-body body">
             <h5 class="card-title">${evento.name}</h5>
-            <p class="card-text bg-warning">${evento.description}</p>
+            <div class=" d-flex flex-column">
+            <p class="card-text bg-warning flex-grow-1">${evento.description}</p>
+            </div>
             <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="./details.html?id=${evento._id}" class="btn  btn-outline-danger me-md-2">Go to Details</a>
             </div>
@@ -83,7 +85,7 @@ function cardUpcoming(array, lugar) {
     let tarjetas=''
     array.forEach(evento => {
         tarjetas += `
-        <div class="card zoom bg-info-subtle" style="width:18rem">
+        <div class="card zoom bg-info-subtle " style="width:18rem">
             <img src="${evento.image}" class="card-img-top" >
             <div class="card-body body">
                 <h5 class="card-title">${evento.name}</h5>
@@ -135,4 +137,5 @@ function filtrarCat(array){
     }
     return array
 }
+
 export{cardIndex, pintarCards,fechas_pasadas, comparar_fechas, cardUpcoming, crearChecks, filtrarCat, filtrarPorTexto}
